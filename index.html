@@ -1,17 +1,444 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="غفاری گلد گالری - اراک">
+
     <title>غفاری گلد گالری</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>غفاری گلد گالری</h1>
+    <!-- ================= HEADER ================= -->
 
-<p>
-زیبایی، اصالت، اعتماد
-</p>
+    <header class="header">
+
+        <div class="logo-container">
+
+            <!-- Replace this with your real logo later -->
+            <div class="logo-placeholder">
+                غفاری
+            </div>
+
+            <h1>غفاری گلد گالری</h1>
+
+            <p class="slogan">
+                زیبایی • اصالت • اعتماد
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+        <section class="links-section">
+
+            <h2>راه‌های ارتباطی</h2>
+
+            <div class="links-grid">
+
+
+                <!-- Instagram -->
+
+                <div class="link-card">
+
+                    <div class="app-icon instagram-icon">
+                        <svg viewBox="0 0 24 24"
+                             xmlns="http://www.w3.org/2000/svg">
+
+                            <rect x="3"
+                                  y="3"
+                                  width="18"
+                                  height="18"
+                                  rx="5"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  stroke-width="2"/>
+
+                            <circle cx="12"
+                                    cy="12"
+                                    r="4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"/>
+
+                            <circle cx="17.5"
+                                    cy="6.5"
+                                    r="1"
+                                    fill="currentColor"/>
+
+                        </svg>
+                    </div>
+
+                    <h3>اینستاگرام</h3>
+
+                    <p class="username">
+                        @ghafari_goldgallery
+                    </p>
+
+                    <a
+                        class="open-button"
+                        href="https://www.instagram.com/ghafari_goldgallery?igsh=MWJwcTFnbzl4M29lNA=="
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        باز کردن
+
+                    </a>
+
+                    <button
+                        class="copy-button"
+                        onclick="copyLink(
+                        'https://www.instagram.com/ghafari_goldgallery?igsh=MWJwcTFnbzl4M29lNA=='
+                        )">
+
+                        📋 کپی لینک
+
+                    </button>
+
+                </div>
+
+
+                <!-- Bale -->
+
+                <div class="link-card">
+
+                    <div class="app-icon bale-icon">
+
+                        <span>ب</span>
+
+                    </div>
+
+                    <h3>بله</h3>
+
+                    <p class="username">
+                        کانال غفاری گلد گالری
+                    </p>
+
+                    <a
+                        class="open-button"
+                        href="https://ble.ir/join/4sXUNnfc6S"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        باز کردن
+
+                    </a>
+
+                    <button
+                        class="copy-button"
+                        onclick="copyLink(
+                        'https://ble.ir/join/4sXUNnfc6S'
+                        )">
+
+                        📋 کپی لینک
+
+                    </button>
+
+                </div>
+
+
+                <!-- Eitaa -->
+
+                <div class="link-card">
+
+                    <div class="app-icon eitaa-icon">
+
+                        <span>ای</span>
+
+                    </div>
+
+                    <h3>ایتا</h3>
+
+                    <p class="username">
+                        @ghafari_goldgallery
+                    </p>
+
+                    <a
+                        class="open-button"
+                        href="https://eitaa.com/ghafari_goldgallery"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        باز کردن
+
+                    </a>
+
+                    <button
+                        class="copy-button"
+                        onclick="copyLink(
+                        'https://eitaa.com/ghafari_goldgallery'
+                        )">
+
+                        📋 کپی لینک
+
+                    </button>
+
+                </div>
+
+
+                <!-- Google Maps -->
+
+                <div class="link-card">
+
+                    <div class="app-icon maps-icon">
+
+                        <svg viewBox="0 0 24 24">
+
+                            <path
+                                d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"/>
+
+                            <circle
+                                cx="12"
+                                cy="9"
+                                r="2.5"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"/>
+
+                        </svg>
+
+                    </div>
+
+                    <h3>موقعیت فروشگاه</h3>
+
+                    <p class="username">
+                        اراک، میدان شهدا
+                    </p>
+
+                    <!-- Replace the URL later with the exact Google Maps URL -->
+
+                    <a
+                        class="open-button"
+                        href="https://www.google.com/maps/search/?api=1&query=اراک+میدان+شهدا+پاساژ+امیرکبیر"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        📍 باز کردن نقشه
+
+                    </a>
+
+                    <button
+                        class="copy-button"
+                        onclick="copyLink(
+                        'https://www.google.com/maps/search/?api=1&query=اراک+میدان+شهدا+پاساژ+امیرکبیر'
+                        )">
+
+                        📋 کپی لینک
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT ================= -->
+
+        <section class="contact-section">
+
+            <h2>تماس با ما</h2>
+
+            <div class="phone-grid">
+
+
+                <!-- Phone 1 -->
+
+                <div class="phone-card">
+
+                    <div class="phone-icon">
+                        ☎
+                    </div>
+
+                    <a href="tel:09185809949">
+                        ۰۹۱۸۵۸۰۹۹۴۹
+                    </a>
+
+                    <button
+                        onclick="copyLink('09185809949')">
+
+                        📋 کپی شماره
+
+                    </button>
+
+                </div>
+
+
+                <!-- Phone 2 -->
+
+                <div class="phone-card">
+
+                    <div class="phone-icon">
+                        ☎
+                    </div>
+
+                    <a href="tel:08632223317">
+                        ۰۸۶۳۲۲۲۳۳۱۷
+                    </a>
+
+                    <button
+                        onclick="copyLink('08632223317')">
+
+                        📋 کپی شماره
+
+                    </button>
+
+                </div>
+
+
+                <!-- Phone 3 -->
+
+                <div class="phone-card">
+
+                    <div class="phone-icon">
+                        ☎
+                    </div>
+
+                    <a href="tel:09372633782">
+                        ۰۹۳۷۲۶۳۳۷۸۲
+                    </a>
+
+                    <button
+                        onclick="copyLink('09372633782')">
+
+                        📋 کپی شماره
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ADDRESS ================= -->
+
+        <section class="address-section">
+
+            <h2>آدرس گالری</h2>
+
+            <p>
+
+                اراک، میدان شهدا،
+                پاساژ امیرکبیر،
+                طبقه همکف،
+                راهرو A3
+
+            </p>
+
+            <a
+                class="map-large-button"
+                href="https://www.google.com/maps/search/?api=1&query=اراک+میدان+شهدا+پاساژ+امیرکبیر"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                📍 مشاهده در Google Maps
+
+            </a>
+
+        </section>
+
+
+        <!-- ================= SUPPORT ================= -->
+
+        <section class="support-section">
+
+            <div class="support-icon">
+                💬
+            </div>
+
+            <h2>
+                پشتیبانی
+            </h2>
+
+            <p>
+                برای ارتباط با ما می‌توانید از یکی
+                از روش‌های زیر استفاده کنید.
+            </p>
+
+            <div class="support-buttons">
+
+                <a href="tel:09185809949">
+                    ☎ تماس با ما
+                </a>
+
+                <a
+                    href="https://www.instagram.com/ghafari_goldgallery"
+                    target="_blank">
+
+                    📷 اینستاگرام
+
+                </a>
+
+                <a
+                    href="https://ble.ir/join/4sXUNnfc6S"
+                    target="_blank">
+
+                    💬 بله
+
+                </a>
+
+                <a
+                    href="https://eitaa.com/ghafari_goldgallery"
+                    target="_blank">
+
+                    📢 ایتا
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            غفاری گلد گالری
+        </p>
+
+        <p>
+            اراک، میدان شهدا، پاساژ امیرکبیر
+        </p>
+
+    </footer>
+
+
+    <!-- COPY MESSAGE -->
+
+    <div id="copy-toast">
+
+        ✓ لینک با موفقیت کپی شد
+
+    </div>
+
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
