@@ -1,0 +1,744 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fffdf8 0%,
+            #ffffff 50%,
+            #faf8f2 100%
+        );
+
+    color: #222;
+
+    direction: rtl;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    text-align: center;
+
+    padding:
+        50px
+        20px
+        35px;
+}
+
+.logo-container {
+    max-width: 700px;
+    margin: auto;
+}
+
+.logo-placeholder {
+
+    width: 110px;
+    height: 110px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+    font-weight: bold;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b8860b,
+            #e6c35c,
+            #b8860b
+        );
+
+    box-shadow:
+        0 10px 30px
+        rgba(180, 140, 40, 0.25);
+}
+
+h1 {
+    margin:
+        20px
+        0
+        8px;
+
+    font-size: 32px;
+
+    color: #222;
+}
+
+.slogan {
+
+    margin: 0;
+
+    color: #9b7620;
+
+    font-size: 16px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+main {
+    width: 100%;
+}
+
+section {
+
+    width: min(
+        1200px,
+        calc(100% - 40px)
+    );
+
+    margin:
+        0
+        auto
+        55px;
+}
+
+section h2 {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+    font-size: 24px;
+
+    color: #333;
+}
+
+
+/* =========================
+   LINK CARDS
+========================= */
+
+.links-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 22px;
+}
+
+.link-card {
+
+    background: #ffffff;
+
+    border:
+        1px solid
+        #eadfbe;
+
+    border-radius: 20px;
+
+    padding: 25px 18px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 30px
+        rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+.link-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================
+   APP ICONS
+========================= */
+
+.app-icon {
+
+    width: 72px;
+    height: 72px;
+
+    margin:
+        0
+        auto
+        15px;
+
+    border-radius: 20px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    color: #ffffff;
+
+    font-weight: bold;
+
+    font-size: 28px;
+}
+
+.app-icon svg {
+
+    width: 40px;
+    height: 40px;
+}
+
+
+/* Instagram */
+
+.instagram-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #833ab4,
+            #fd1d1d,
+            #fcb045
+        );
+}
+
+
+/* Bale */
+
+.bale-icon {
+
+    background: #20a86b;
+
+    font-size: 36px;
+}
+
+
+/* Eitaa */
+
+.eitaa-icon {
+
+    background: #21a4df;
+
+    font-size: 25px;
+}
+
+
+/* Maps */
+
+.maps-icon {
+
+    background: #ffffff;
+
+    color: #d94b3d;
+
+    border:
+        1px solid
+        #eee;
+}
+
+
+/* =========================
+   CARD TEXT
+========================= */
+
+.link-card h3 {
+
+    margin:
+        8px
+        0;
+
+    font-size: 19px;
+}
+
+.username {
+
+    min-height: 42px;
+
+    color: #777;
+
+    font-size: 13px;
+
+    direction: ltr;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.open-button,
+.copy-button {
+
+    width: 100%;
+
+    border-radius: 10px;
+
+    padding:
+        11px
+        8px;
+
+    margin-top: 8px;
+
+    display: block;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    transition:
+        0.2s ease;
+}
+
+
+/* Open */
+
+.open-button {
+
+    background:
+        linear-gradient(
+            135deg,
+            #b8860b,
+            #d4af37
+        );
+
+    color: #ffffff;
+
+    border: none;
+}
+
+.open-button:hover {
+
+    filter:
+        brightness(1.08);
+}
+
+
+/* Copy */
+
+.copy-button {
+
+    background: #fff;
+
+    color: #9b7620;
+
+    border:
+        1px solid
+        #d4af37;
+}
+
+.copy-button:hover {
+
+    background: #fff9e8;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.phone-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.phone-card {
+
+    background: #fff;
+
+    border:
+        1px solid
+        #eadfbe;
+
+    border-radius: 18px;
+
+    padding: 22px;
+
+    text-align: center;
+}
+
+.phone-icon {
+
+    font-size: 30px;
+
+    color: #b8860b;
+
+    margin-bottom: 10px;
+}
+
+.phone-card a {
+
+    display: block;
+
+    color: #222;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    direction: ltr;
+
+    text-decoration: none;
+
+    margin-bottom: 15px;
+}
+
+.phone-card button {
+
+    border:
+        1px solid
+        #d4af37;
+
+    background: white;
+
+    color: #9b7620;
+
+    border-radius: 8px;
+
+    padding: 9px 15px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   ADDRESS
+========================= */
+
+.address-section {
+
+    text-align: center;
+
+    background: #fff;
+
+    padding: 35px 20px;
+
+    border-radius: 22px;
+
+    border:
+        1px solid
+        #eadfbe;
+}
+
+.address-section p {
+
+    font-size: 17px;
+
+    line-height: 2;
+
+    color: #555;
+}
+
+.map-large-button {
+
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding:
+        13px
+        25px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    background:
+        #222;
+
+    color: white;
+}
+
+
+/* =========================
+   SUPPORT
+========================= */
+
+.support-section {
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff9e8,
+            #ffffff
+        );
+
+    padding: 40px 25px;
+
+    border-radius: 25px;
+
+    border:
+        1px solid
+        #eadfbe;
+}
+
+.support-icon {
+
+    font-size: 42px;
+
+    margin-bottom: 10px;
+}
+
+.support-section p {
+
+    color: #666;
+
+    line-height: 2;
+}
+
+.support-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.support-buttons a {
+
+    padding:
+        11px
+        20px;
+
+    background: #222;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    text-align: center;
+
+    padding:
+        30px
+        20px;
+
+    background: #222;
+
+    color: #ddd;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   COPY TOAST
+========================= */
+
+#copy-toast {
+
+    position: fixed;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        translateY(100px);
+
+    background: #222;
+
+    color: #fff;
+
+    padding:
+        12px
+        22px;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+
+    opacity: 0;
+
+    transition:
+        all 0.3s ease;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,0.2);
+}
+
+#copy-toast.show {
+
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .header {
+
+        padding-top: 30px;
+    }
+
+    h1 {
+
+        font-size: 25px;
+    }
+
+    section {
+
+        width:
+            calc(100% - 24px);
+    }
+
+    /*
+       TWO COLUMNS ON MOBILE
+    */
+
+    .links-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .link-card {
+
+        padding:
+            18px
+            10px;
+
+        border-radius: 15px;
+    }
+
+    .app-icon {
+
+        width: 58px;
+        height: 58px;
+
+        border-radius: 16px;
+    }
+
+    .app-icon svg {
+
+        width: 32px;
+        height: 32px;
+    }
+
+    .link-card h3 {
+
+        font-size: 16px;
+    }
+
+    .username {
+
+        font-size: 11px;
+    }
+
+    .open-button,
+    .copy-button {
+
+        font-size: 12px;
+
+        padding: 9px 5px;
+    }
+
+    /*
+       PHONE CARDS ALSO 2 COLUMNS
+    */
+
+    .phone-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .phone-card {
+
+        padding:
+            17px
+            8px;
+    }
+
+    .phone-card a {
+
+        font-size: 14px;
+    }
+
+    .support-buttons {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .support-buttons a {
+
+        font-size: 13px;
+
+        padding:
+            10px
+            5px;
+    }
+}style.css
