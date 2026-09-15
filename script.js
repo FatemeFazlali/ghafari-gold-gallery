@@ -1,689 +1,147 @@
-/* =========================
-GENERAL
-========================= */
+/* =========================================
+   GHAFARI GOLD GALLERY
+   Clipboard / Copy Functions
+========================================= */
 
-* {
-  box-sizing: border-box;
-  }
 
-html {
-scroll-behavior: smooth;
+/**
+ * Copy text to the user's clipboard.
+ * Works with modern browsers and has a
+ * fallback for browsers where Clipboard API
+ * is unavailable.
+ */
+function copyLink(text) {
+
+    // Modern Clipboard API
+    if (
+        navigator.clipboard &&
+        window.isSecureContext
+    ) {
+
+        navigator.clipboard.writeText(text)
+            .then(function () {
+
+                showCopyMessage("✓ کپی شد");
+
+            })
+            .catch(function () {
+
+                fallbackCopy(text);
+
+            });
+
+        return;
+    }
+
+    // Older-browser fallback
+    fallbackCopy(text);
 }
 
-body {
-margin: 0;
 
-```
-font-family:
-    Tahoma,
-    Arial,
-    sans-serif;
+/**
+ * Fallback copy method.
+ */
+function fallbackCopy(text) {
 
-background:
-    linear-gradient(
-        180deg,
-        #fffdf8 0%,
-        #ffffff 50%,
-        #faf8f2 100%
+    const textarea = document.createElement("textarea");
+
+    textarea.value = text;
+
+    // Keep textarea invisible
+    textarea.style.position = "fixed";
+    textarea.style.left = "-9999px";
+    textarea.style.top = "0";
+    textarea.style.width = "1px";
+    textarea.style.height = "1px";
+    textarea.style.opacity = "0";
+
+    document.body.appendChild(textarea);
+
+    textarea.focus();
+    textarea.select();
+
+    // Make sure the complete value is selected
+    textarea.setSelectionRange(
+        0,
+        textarea.value.length
     );
 
-color: #222;
+    let copied = false;
 
-direction: rtl;
-```
+    try {
 
+        copied = document.execCommand("copy");
+
+    } catch (error) {
+
+        copied = false;
+
+    }
+
+    document.body.removeChild(textarea);
+
+    if (copied) {
+
+        showCopyMessage("✓ کپی شد");
+
+    } else {
+
+        showCopyMessage("⚠ کپی انجام نشد");
+
+    }
 }
 
-/* =========================
-HEADER
-========================= */
 
-.header {
-text-align: center;
-padding: 45px 20px 30px;
+/**
+ * Show the small copy notification.
+ */
+function showCopyMessage(message) {
+
+    const toast =
+        document.getElementById("copy-toast");
+
+    // If toast element doesn't exist,
+    // use an alert as a last resort.
+    if (!toast) {
+
+        alert(message);
+
+        return;
+
+    }
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    // Clear any existing timer
+    if (window.copyToastTimer) {
+
+        clearTimeout(window.copyToastTimer);
+
+    }
+
+    // Hide after 2 seconds
+    window.copyToastTimer =
+        setTimeout(function () {
+
+            toast.classList.remove("show");
+
+        }, 2000);
 }
 
-.logo-container {
-max-width: 700px;
-margin: 0 auto;
-}
 
-.logo-image {
-width: 160px;
-height: 160px;
+/* =========================================
+   PAGE READY
+========================================= */
 
-```
-object-fit: contain;
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
-display: block;
+        console.log(
+            "Ghafari Gold Gallery page loaded successfully."
+        );
 
-margin: 0 auto;
-
-border-radius: 20px;
-
-box-shadow:
-    0 10px 30px
-    rgba(180, 140, 40, 0.18);
-```
-
-}
-
-/* =========================
-MAIN / SECTIONS
-========================= */
-
-main {
-width: 100%;
-}
-
-section {
-width: min(1200px, calc(100% - 40px));
-margin: 0 auto 55px;
-}
-
-section h2 {
-text-align: center;
-margin-bottom: 30px;
-font-size: 24px;
-color: #333;
-}
-
-/* =========================
-LINK CARDS
-========================= */
-
-.links-grid {
-display: grid;
-
-```
-grid-template-columns:
-    repeat(4, 1fr);
-
-gap: 22px;
-```
-
-}
-
-.link-card {
-background: #ffffff;
-
-```
-border:
-    1px solid
-    #eadfbe;
-
-border-radius: 20px;
-
-padding: 25px 18px;
-
-text-align: center;
-
-box-shadow:
-    0 8px 30px
-    rgba(0, 0, 0, 0.06);
-
-transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-```
-
-}
-
-.link-card:hover {
-transform: translateY(-6px);
-
-```
-box-shadow:
-    0 15px 40px
-    rgba(0, 0, 0, 0.10);
-```
-
-}
-
-/* =========================
-APP ICONS
-========================= */
-
-.app-icon {
-width: 72px;
-height: 72px;
-
-```
-margin: 0 auto 15px;
-
-border-radius: 20px;
-
-display: flex;
-
-justify-content: center;
-align-items: center;
-
-color: #ffffff;
-
-font-weight: bold;
-
-font-size: 28px;
-```
-
-}
-
-.app-icon svg {
-width: 40px;
-height: 40px;
-}
-
-/* Instagram */
-
-.instagram-icon {
-background:
-linear-gradient(
-135deg,
-#833ab4,
-#fd1d1d,
-#fcb045
+    }
 );
-}
-
-/* Bale */
-
-.bale-icon {
-background: #20a86b;
-font-size: 36px;
-}
-
-/* Eitaa */
-
-.eitaa-icon {
-background: #21a4df;
-font-size: 25px;
-}
-
-/* Google Maps */
-
-.maps-icon {
-background: #ffffff;
-
-```
-color: #d94b3d;
-
-border:
-    1px solid
-    #eeeeee;
-```
-
-}
-
-/* =========================
-CARD TEXT
-========================= */
-
-.link-card h3 {
-margin: 8px 0;
-font-size: 19px;
-}
-
-.username {
-min-height: 42px;
-
-```
-color: #777;
-
-font-size: 13px;
-
-line-height: 1.8;
-```
-
-}
-
-/* =========================
-BUTTONS
-========================= */
-
-.open-button,
-.copy-button {
-width: 100%;
-
-```
-border-radius: 10px;
-
-padding: 11px 8px;
-
-margin-top: 8px;
-
-display: block;
-
-font-size: 14px;
-
-cursor: pointer;
-
-text-decoration: none;
-
-transition: 0.2s ease;
-```
-
-}
-
-/* Open button */
-
-.open-button {
-background:
-linear-gradient(
-135deg,
-#b8860b,
-#d4af37
-);
-
-```
-color: #ffffff;
-
-border: none;
-```
-
-}
-
-.open-button:hover {
-filter: brightness(1.08);
-}
-
-/* Copy button */
-
-.copy-button {
-background: #ffffff;
-
-```
-color: #9b7620;
-
-border:
-    1px solid
-    #d4af37;
-```
-
-}
-
-.copy-button:hover {
-background: #fff9e8;
-}
-
-/* =========================
-CONTACT
-========================= */
-
-.phone-grid {
-display: grid;
-
-```
-grid-template-columns:
-    repeat(3, 1fr);
-
-gap: 20px;
-```
-
-}
-
-.phone-card {
-background: #ffffff;
-
-```
-border:
-    1px solid
-    #eadfbe;
-
-border-radius: 18px;
-
-padding: 22px;
-
-text-align: center;
-```
-
-}
-
-.phone-icon {
-font-size: 30px;
-
-```
-color: #b8860b;
-
-margin-bottom: 10px;
-```
-
-}
-
-.phone-card a {
-display: block;
-
-```
-color: #222;
-
-font-size: 18px;
-
-font-weight: bold;
-
-direction: ltr;
-
-text-decoration: none;
-
-margin-bottom: 15px;
-```
-
-}
-
-.phone-card button {
-border:
-1px solid
-#d4af37;
-
-```
-background: #ffffff;
-
-color: #9b7620;
-
-border-radius: 8px;
-
-padding: 9px 15px;
-
-cursor: pointer;
-```
-
-}
-
-/* =========================
-ADDRESS
-========================= */
-
-.address-section {
-text-align: center;
-
-```
-background: #ffffff;
-
-padding: 35px 20px;
-
-border-radius: 22px;
-
-border:
-    1px solid
-    #eadfbe;
-```
-
-}
-
-.address-section p {
-font-size: 17px;
-
-```
-line-height: 2;
-
-color: #555;
-```
-
-}
-
-.map-large-button {
-display: inline-block;
-
-```
-margin-top: 15px;
-
-padding: 13px 25px;
-
-border-radius: 12px;
-
-text-decoration: none;
-
-background: #222;
-
-color: #ffffff;
-```
-
-}
-
-/* =========================
-SUPPORT
-========================= */
-
-.support-section {
-text-align: center;
-
-```
-background:
-    linear-gradient(
-        135deg,
-        #fff9e8,
-        #ffffff
-    );
-
-padding: 40px 25px;
-
-border-radius: 25px;
-
-border:
-    1px solid
-    #eadfbe;
-```
-
-}
-
-.support-icon {
-font-size: 42px;
-margin-bottom: 10px;
-}
-
-.support-section p {
-color: #666;
-line-height: 2;
-}
-
-.support-buttons {
-display: flex;
-
-```
-justify-content: center;
-
-flex-wrap: wrap;
-
-gap: 12px;
-
-margin-top: 20px;
-```
-
-}
-
-.support-buttons a {
-padding: 11px 20px;
-
-```
-background: #222;
-
-color: #ffffff;
-
-text-decoration: none;
-
-border-radius: 10px;
-```
-
-}
-
-/* =========================
-FOOTER
-========================= */
-
-footer {
-text-align: center;
-
-```
-padding: 30px 20px;
-
-background: #222;
-
-color: #ddd;
-
-font-size: 13px;
-```
-
-}
-
-/* =========================
-COPY TOAST
-========================= */
-
-#copy-toast {
-position: fixed;
-
-```
-bottom: 25px;
-
-left: 50%;
-
-transform:
-    translateX(-50%)
-    translateY(100px);
-
-background: #222;
-
-color: #ffffff;
-
-padding: 12px 22px;
-
-border-radius: 30px;
-
-font-size: 14px;
-
-opacity: 0;
-
-transition: all 0.3s ease;
-
-z-index: 9999;
-
-box-shadow:
-    0 5px 20px
-    rgba(0, 0, 0, 0.2);
-```
-
-}
-
-#copy-toast.show {
-opacity: 1;
-
-```
-transform:
-    translateX(-50%)
-    translateY(0);
-```
-
-}
-
-/* =========================
-MOBILE
-========================= */
-
-@media (max-width: 700px) {
-
-```
-.header {
-    padding-top: 30px;
-}
-
-.logo-image {
-    width: 130px;
-    height: 130px;
-}
-
-section {
-    width: calc(100% - 24px);
-}
-
-
-/* 2 x 2 social cards */
-
-.links-grid {
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 12px;
-}
-
-.link-card {
-    padding: 18px 10px;
-    border-radius: 15px;
-}
-
-.app-icon {
-    width: 58px;
-    height: 58px;
-    border-radius: 16px;
-}
-
-.app-icon svg {
-    width: 32px;
-    height: 32px;
-}
-
-.link-card h3 {
-    font-size: 16px;
-}
-
-.username {
-    font-size: 11px;
-}
-
-.open-button,
-.copy-button {
-    font-size: 12px;
-    padding: 9px 5px;
-}
-
-
-/* 2 columns for phone cards */
-
-.phone-grid {
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 12px;
-}
-
-.phone-card {
-    padding: 17px 8px;
-}
-
-.phone-card a {
-    font-size: 14px;
-}
-
-
-/* 2 columns for support */
-
-.support-buttons {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-}
-
-.support-buttons a {
-    font-size: 13px;
-
-    padding: 10px 5px;
-}
-```
-
-}
-
-/* =========================
-VERY SMALL PHONES
-========================= */
-
-@media (max-width: 380px) {
-
-```
-.links-grid,
-.phone-grid {
-    grid-template-columns: 1fr;
-}
-
-.support-buttons {
-    grid-template-columns: 1fr;
-}
-```
-
-}
