@@ -13,14 +13,19 @@ scroll-behavior: smooth;
 body {
 margin: 0;
 font-family: Tahoma, Arial, sans-serif;
+
+```
 background: linear-gradient(
-180deg,
-#fffdf8 0%,
-#ffffff 50%,
-#faf8f2 100%
+    180deg,
+    #fffdf8 0%,
+    #ffffff 50%,
+    #faf8f2 100%
 );
+
 color: #222;
 direction: rtl;
+```
+
 }
 
 main {
@@ -49,16 +54,31 @@ padding: 20px 12px 15px;
 }
 
 .logo-container {
-max-width: 500px;
-margin: 0 auto;
+width: 260px;
+height: 260px;
+
+```
+margin: 0 auto 20px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+```
+
 }
 
 .logo-image {
-width: 95px;
-height: 95px;
+width: 260px;
+height: 260px;
+
+```
 object-fit: contain;
+
 display: block;
+
 margin: 0 auto;
+```
+
 }
 
 /* =========================
@@ -67,23 +87,51 @@ SOCIAL / LINK CARDS
 
 .links-grid {
 display: grid;
-grid-template-columns: repeat(4, 1fr);
+
+```
+grid-template-columns:
+    repeat(4, 1fr);
+
 gap: 12px;
+```
+
 }
 
 .link-card {
 background: #fff;
-border: 1px solid #eadfbe;
+
+```
+border:
+    1px solid
+    #eadfbe;
+
 border-radius: 14px;
+
 padding: 14px 12px;
+
 text-align: center;
-box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
-transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+box-shadow:
+    0 5px 18px
+    rgba(0, 0, 0, 0.05);
+
+transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+```
+
 }
 
 .link-card:hover {
-transform: translateY(-3px);
-box-shadow: 0 9px 24px rgba(0, 0, 0, 0.08);
+transform:
+translateY(-3px);
+
+```
+box-shadow:
+    0 9px 24px
+    rgba(0, 0, 0, 0.08);
+```
+
 }
 
 /* =========================
@@ -93,20 +141,32 @@ APP ICONS
 .app-icon {
 width: 52px;
 height: 52px;
+
+```
 margin: 0 auto 9px;
+
 border-radius: 14px;
+
 display: flex;
+
 justify-content: center;
 align-items: center;
+
 color: #fff;
+
 font-weight: bold;
+
 font-size: 22px;
+```
+
 }
 
 .app-icon svg {
 width: 28px;
 height: 28px;
 }
+
+/* Instagram */
 
 .instagram-icon {
 background: linear-gradient(
@@ -117,20 +177,33 @@ background: linear-gradient(
 );
 }
 
+/* Bale */
+
 .bale-icon {
 background: #20a86b;
 font-size: 28px;
 }
+
+/* Eitaa */
 
 .eitaa-icon {
 background: #21a4df;
 font-size: 20px;
 }
 
+/* Google Maps */
+
 .maps-icon {
 background: #fff;
+
+```
 color: #d94b3d;
-border: 1px solid #eee;
+
+border:
+    1px solid
+    #eee;
+```
+
 }
 
 /* =========================
@@ -139,15 +212,26 @@ TEXT
 
 .link-card h3 {
 margin: 6px 0 3px;
+
+```
 font-size: 16px;
+```
+
 }
 
 .username {
 min-height: 30px;
+
+```
 margin: 3px 0;
+
 color: #777;
+
 font-size: 11px;
+
 line-height: 1.5;
+```
+
 }
 
 /* =========================
@@ -157,16 +241,30 @@ BUTTONS
 .open-button,
 .copy-button {
 width: 100%;
+
+```
 border-radius: 8px;
+
 padding: 8px 5px;
+
 margin-top: 5px;
+
 display: block;
+
 font-size: 12px;
+
 cursor: pointer;
+
 text-decoration: none;
+
 transition: 0.2s ease;
+
 font-family: inherit;
+```
+
 }
+
+/* Open */
 
 .open-button {
 background: linear-gradient(
@@ -174,18 +272,32 @@ background: linear-gradient(
 #b8860b,
 #d4af37
 );
+
+```
 color: #fff;
+
 border: none;
+```
+
 }
 
 .open-button:hover {
 filter: brightness(1.08);
 }
 
+/* Copy */
+
 .copy-button {
 background: #fff;
+
+```
 color: #9b7620;
-border: 1px solid #d4af37;
+
+border:
+    1px solid
+    #d4af37;
+```
+
 }
 
 .copy-button:hover {
@@ -198,43 +310,84 @@ CONTACT
 
 .phone-grid {
 display: grid;
-grid-template-columns: repeat(3, 1fr);
+
+```
+grid-template-columns:
+    repeat(3, 1fr);
+
 gap: 12px;
+```
+
 }
 
 .phone-card {
 background: #fff;
-border: 1px solid #eadfbe;
+
+```
+border:
+    1px solid
+    #eadfbe;
+
 border-radius: 14px;
+
 padding: 14px 10px;
+
 text-align: center;
+```
+
 }
 
 .phone-icon {
 font-size: 24px;
+
+```
 color: #b8860b;
+
 margin-bottom: 5px;
+```
+
 }
 
 .phone-card a {
 display: block;
+
+```
 color: #222;
+
 font-size: 15px;
+
 font-weight: bold;
+
 direction: ltr;
+
 text-decoration: none;
+
 margin-bottom: 9px;
+```
+
 }
 
 .phone-card button {
-border: 1px solid #d4af37;
+border:
+1px solid
+#d4af37;
+
+```
 background: #fff;
+
 color: #9b7620;
+
 border-radius: 7px;
+
 padding: 7px 10px;
+
 cursor: pointer;
+
 font-family: inherit;
+
 font-size: 12px;
+```
+
 }
 
 /* =========================
@@ -243,28 +396,53 @@ ADDRESS
 
 .address-section {
 text-align: center;
+
+```
 background: #fff;
+
 padding: 20px 15px;
+
 border-radius: 16px;
-border: 1px solid #eadfbe;
+
+border:
+    1px solid
+    #eadfbe;
+```
+
 }
 
 .address-section p {
 font-size: 14px;
+
+```
 line-height: 1.9;
+
 color: #555;
+
 margin: 8px 0;
+```
+
 }
 
 .map-large-button {
 display: inline-block;
+
+```
 margin-top: 8px;
+
 padding: 9px 16px;
+
 border-radius: 9px;
+
 text-decoration: none;
+
 background: #222;
+
 color: #fff;
+
 font-size: 13px;
+```
+
 }
 
 /* =========================
@@ -273,43 +451,77 @@ SUPPORT
 
 .support-section {
 text-align: center;
+
+```
 background: linear-gradient(
-135deg,
-#fff9e8,
-#fff
+    135deg,
+    #fff9e8,
+    #fff
 );
+
 padding: 22px 15px;
+
 border-radius: 17px;
-border: 1px solid #eadfbe;
+
+border:
+    1px solid
+    #eadfbe;
+```
+
 }
 
 .support-icon {
 font-size: 30px;
+
+```
 margin-bottom: 4px;
+```
+
 }
 
 .support-section p {
 color: #666;
+
+```
 line-height: 1.8;
+
 font-size: 13px;
+
 margin: 5px 0;
+```
+
 }
 
 .support-buttons {
 display: flex;
+
+```
 justify-content: center;
+
 flex-wrap: wrap;
+
 gap: 8px;
+
 margin-top: 12px;
+```
+
 }
 
 .support-buttons a {
 padding: 8px 14px;
+
+```
 background: #222;
+
 color: #fff;
+
 text-decoration: none;
+
 border-radius: 8px;
+
 font-size: 12px;
+```
+
 }
 
 /* =========================
@@ -318,10 +530,17 @@ FOOTER
 
 footer {
 text-align: center;
+
+```
 padding: 18px 10px;
+
 background: #222;
+
 color: #ddd;
+
 font-size: 11px;
+```
+
 }
 
 footer p {
@@ -334,33 +553,49 @@ COPY TOAST
 
 #copy-toast {
 position: fixed;
-bottom: 18px;
-left: 50%;
-transform: translateX(-50%) translateY(80px);
 
 ```
+bottom: 18px;
+
+left: 50%;
+
+transform:
+    translateX(-50%)
+    translateY(80px);
+
 background: #222;
+
 color: #fff;
 
 padding: 9px 16px;
+
 border-radius: 20px;
 
 font-size: 12px;
 
 opacity: 0;
 
-transition: all 0.25s ease;
+transition:
+    all 0.25s ease;
 
 z-index: 9999;
 
-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18);
+box-shadow:
+    0 4px 15px
+    rgba(0, 0, 0, 0.18);
 ```
 
 }
 
 #copy-toast.show {
 opacity: 1;
-transform: translateX(-50%) translateY(0);
+
+```
+transform:
+    translateX(-50%)
+    translateY(0);
+```
+
 }
 
 /* =========================
@@ -374,38 +609,58 @@ MOBILE
     padding: 14px 10px 12px;
 }
 
+/*
+   Logo above the cards
+*/
+
+.logo-container {
+    width: 150px;
+    height: 150px;
+
+    margin-bottom: 15px;
+}
+
 .logo-image {
-    width: 75px;
-    height: 75px;
+    width: 150px;
+    height: 150px;
 }
 
 section {
     width: calc(100% - 16px);
+
     margin-bottom: 22px;
 }
 
 section h2 {
     font-size: 18px;
+
     margin-bottom: 11px;
 }
 
 
-/* 2 x 2 */
+/* =====================
+   2 x 2 LINK CARDS
+===================== */
 
 .links-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+        repeat(2, 1fr);
+
     gap: 8px;
 }
 
 .link-card {
     padding: 11px 7px;
+
     border-radius: 12px;
 }
 
 .app-icon {
     width: 44px;
     height: 44px;
+
     border-radius: 11px;
+
     margin-bottom: 7px;
 }
 
@@ -420,27 +675,36 @@ section h2 {
 
 .username {
     min-height: 28px;
+
     font-size: 10px;
 }
 
 .open-button,
 .copy-button {
     font-size: 10px;
+
     padding: 7px 3px;
+
     margin-top: 4px;
+
     border-radius: 7px;
 }
 
 
-/* Phone cards */
+/* =====================
+   PHONE CARDS
+===================== */
 
 .phone-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+        repeat(2, 1fr);
+
     gap: 8px;
 }
 
 .phone-card {
     padding: 12px 6px;
+
     border-radius: 12px;
 }
 
@@ -454,11 +718,14 @@ section h2 {
 
 .phone-card button {
     font-size: 10px;
+
     padding: 6px 8px;
 }
 
 
-/* Support */
+/* =====================
+   SUPPORT
+===================== */
 
 .support-section {
     padding: 18px 12px;
@@ -466,12 +733,16 @@ section h2 {
 
 .support-buttons {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
     gap: 7px;
 }
 
 .support-buttons a {
     font-size: 11px;
+
     padding: 8px 4px;
 }
 ```
@@ -485,14 +756,20 @@ VERY SMALL PHONES
 @media (max-width: 380px) {
 
 ```
+.logo-container {
+    width: 120px;
+    height: 120px;
+}
+
 .logo-image {
-    width: 65px;
-    height: 65px;
+    width: 120px;
+    height: 120px;
 }
 
 .links-grid,
 .phone-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+        repeat(2, 1fr);
 }
 
 .link-card h3 {
