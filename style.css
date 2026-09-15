@@ -1,71 +1,503 @@
-function copyLink(text) {
+/* =========================
+GENERAL
+========================= */
+
+* {
+  box-sizing: border-box;
+  }
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+margin: 0;
+font-family: Tahoma, Arial, sans-serif;
+background: linear-gradient(
+180deg,
+#fffdf8 0%,
+#ffffff 50%,
+#faf8f2 100%
+);
+color: #222;
+direction: rtl;
+}
+
+main {
+width: 100%;
+}
+
+section {
+width: min(1050px, calc(100% - 24px));
+margin: 0 auto 30px;
+}
+
+section h2 {
+text-align: center;
+margin: 0 0 16px;
+font-size: 20px;
+color: #333;
+}
+
+/* =========================
+HEADER
+========================= */
+
+.header {
+text-align: center;
+padding: 20px 12px 15px;
+}
+
+.logo-container {
+max-width: 500px;
+margin: 0 auto;
+}
+
+.logo-image {
+width: 95px;
+height: 95px;
+object-fit: contain;
+display: block;
+margin: 0 auto;
+}
+
+/* =========================
+SOCIAL / LINK CARDS
+========================= */
+
+.links-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 12px;
+}
+
+.link-card {
+background: #fff;
+border: 1px solid #eadfbe;
+border-radius: 14px;
+padding: 14px 12px;
+text-align: center;
+box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.link-card:hover {
+transform: translateY(-3px);
+box-shadow: 0 9px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+APP ICONS
+========================= */
+
+.app-icon {
+width: 52px;
+height: 52px;
+margin: 0 auto 9px;
+border-radius: 14px;
+display: flex;
+justify-content: center;
+align-items: center;
+color: #fff;
+font-weight: bold;
+font-size: 22px;
+}
+
+.app-icon svg {
+width: 28px;
+height: 28px;
+}
+
+.instagram-icon {
+background: linear-gradient(
+135deg,
+#833ab4,
+#fd1d1d,
+#fcb045
+);
+}
+
+.bale-icon {
+background: #20a86b;
+font-size: 28px;
+}
+
+.eitaa-icon {
+background: #21a4df;
+font-size: 20px;
+}
+
+.maps-icon {
+background: #fff;
+color: #d94b3d;
+border: 1px solid #eee;
+}
+
+/* =========================
+TEXT
+========================= */
+
+.link-card h3 {
+margin: 6px 0 3px;
+font-size: 16px;
+}
+
+.username {
+min-height: 30px;
+margin: 3px 0;
+color: #777;
+font-size: 11px;
+line-height: 1.5;
+}
+
+/* =========================
+BUTTONS
+========================= */
+
+.open-button,
+.copy-button {
+width: 100%;
+border-radius: 8px;
+padding: 8px 5px;
+margin-top: 5px;
+display: block;
+font-size: 12px;
+cursor: pointer;
+text-decoration: none;
+transition: 0.2s ease;
+font-family: inherit;
+}
+
+.open-button {
+background: linear-gradient(
+135deg,
+#b8860b,
+#d4af37
+);
+color: #fff;
+border: none;
+}
+
+.open-button:hover {
+filter: brightness(1.08);
+}
+
+.copy-button {
+background: #fff;
+color: #9b7620;
+border: 1px solid #d4af37;
+}
+
+.copy-button:hover {
+background: #fff9e8;
+}
+
+/* =========================
+CONTACT
+========================= */
+
+.phone-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 12px;
+}
+
+.phone-card {
+background: #fff;
+border: 1px solid #eadfbe;
+border-radius: 14px;
+padding: 14px 10px;
+text-align: center;
+}
+
+.phone-icon {
+font-size: 24px;
+color: #b8860b;
+margin-bottom: 5px;
+}
+
+.phone-card a {
+display: block;
+color: #222;
+font-size: 15px;
+font-weight: bold;
+direction: ltr;
+text-decoration: none;
+margin-bottom: 9px;
+}
+
+.phone-card button {
+border: 1px solid #d4af37;
+background: #fff;
+color: #9b7620;
+border-radius: 7px;
+padding: 7px 10px;
+cursor: pointer;
+font-family: inherit;
+font-size: 12px;
+}
+
+/* =========================
+ADDRESS
+========================= */
+
+.address-section {
+text-align: center;
+background: #fff;
+padding: 20px 15px;
+border-radius: 16px;
+border: 1px solid #eadfbe;
+}
+
+.address-section p {
+font-size: 14px;
+line-height: 1.9;
+color: #555;
+margin: 8px 0;
+}
+
+.map-large-button {
+display: inline-block;
+margin-top: 8px;
+padding: 9px 16px;
+border-radius: 9px;
+text-decoration: none;
+background: #222;
+color: #fff;
+font-size: 13px;
+}
+
+/* =========================
+SUPPORT
+========================= */
+
+.support-section {
+text-align: center;
+background: linear-gradient(
+135deg,
+#fff9e8,
+#fff
+);
+padding: 22px 15px;
+border-radius: 17px;
+border: 1px solid #eadfbe;
+}
+
+.support-icon {
+font-size: 30px;
+margin-bottom: 4px;
+}
+
+.support-section p {
+color: #666;
+line-height: 1.8;
+font-size: 13px;
+margin: 5px 0;
+}
+
+.support-buttons {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 8px;
+margin-top: 12px;
+}
+
+.support-buttons a {
+padding: 8px 14px;
+background: #222;
+color: #fff;
+text-decoration: none;
+border-radius: 8px;
+font-size: 12px;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer {
+text-align: center;
+padding: 18px 10px;
+background: #222;
+color: #ddd;
+font-size: 11px;
+}
+
+footer p {
+margin: 4px 0;
+}
+
+/* =========================
+COPY TOAST
+========================= */
+
+#copy-toast {
+position: fixed;
+bottom: 18px;
+left: 50%;
+transform: translateX(-50%) translateY(80px);
 
 ```
-if (navigator.clipboard && window.isSecureContext) {
+background: #222;
+color: #fff;
 
-    navigator.clipboard.writeText(text)
-        .then(function () {
-            showCopyMessage("✓ لینک با موفقیت کپی شد");
-        })
-        .catch(function () {
-            fallbackCopy(text);
-        });
+padding: 9px 16px;
+border-radius: 20px;
 
-} else {
+font-size: 12px;
 
-    fallbackCopy(text);
+opacity: 0;
 
+transition: all 0.25s ease;
+
+z-index: 9999;
+
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18);
+```
+
+}
+
+#copy-toast.show {
+opacity: 1;
+transform: translateX(-50%) translateY(0);
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+```
+.header {
+    padding: 14px 10px 12px;
+}
+
+.logo-image {
+    width: 75px;
+    height: 75px;
+}
+
+section {
+    width: calc(100% - 16px);
+    margin-bottom: 22px;
+}
+
+section h2 {
+    font-size: 18px;
+    margin-bottom: 11px;
+}
+
+
+/* 2 x 2 */
+
+.links-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.link-card {
+    padding: 11px 7px;
+    border-radius: 12px;
+}
+
+.app-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
+    margin-bottom: 7px;
+}
+
+.app-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.link-card h3 {
+    font-size: 14px;
+}
+
+.username {
+    min-height: 28px;
+    font-size: 10px;
+}
+
+.open-button,
+.copy-button {
+    font-size: 10px;
+    padding: 7px 3px;
+    margin-top: 4px;
+    border-radius: 7px;
+}
+
+
+/* Phone cards */
+
+.phone-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.phone-card {
+    padding: 12px 6px;
+    border-radius: 12px;
+}
+
+.phone-icon {
+    font-size: 20px;
+}
+
+.phone-card a {
+    font-size: 13px;
+}
+
+.phone-card button {
+    font-size: 10px;
+    padding: 6px 8px;
+}
+
+
+/* Support */
+
+.support-section {
+    padding: 18px 12px;
+}
+
+.support-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px;
+}
+
+.support-buttons a {
+    font-size: 11px;
+    padding: 8px 4px;
 }
 ```
 
 }
 
-function fallbackCopy(text) {
+/* =========================
+VERY SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
 
 ```
-const textarea = document.createElement("textarea");
-
-textarea.value = text;
-
-textarea.style.position = "fixed";
-textarea.style.opacity = "0";
-
-document.body.appendChild(textarea);
-
-textarea.focus();
-textarea.select();
-
-try {
-
-    document.execCommand("copy");
-
-    showCopyMessage("✓ لینک با موفقیت کپی شد");
-
-} catch (error) {
-
-    showCopyMessage("⚠ کپی کردن انجام نشد");
-
+.logo-image {
+    width: 65px;
+    height: 65px;
 }
 
-document.body.removeChild(textarea);
-```
-
+.links-grid,
+.phone-grid {
+    grid-template-columns: repeat(2, 1fr);
 }
 
-function showCopyMessage(message) {
-
-```
-const toast = document.getElementById("copy-toast");
-
-toast.textContent = message;
-
-toast.classList.add("show");
-
-setTimeout(function () {
-
-    toast.classList.remove("show");
-
-}, 2000);
+.link-card h3 {
+    font-size: 13px;
+}
 ```
 
 }
