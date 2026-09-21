@@ -76,7 +76,7 @@ section h2 {
 
     box-shadow:
         0 10px 30px rgba(0, 0, 0, 0.28),
-        0 0 0 6px rgba(201, 162, 39, 0.15);
+        0 0 0 6px rgba(201, 162, 55, 0.15);
 }
 
 /* =========================
@@ -314,6 +314,10 @@ section h2 {
         0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
+.address-section h2 {
+    color: #29251f;
+}
+
 .address-section p {
     font-size: 14px;
     line-height: 1.9;
@@ -364,6 +368,10 @@ section h2 {
 
     box-shadow:
         0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.support-section h2 {
+    color: #29251f;
 }
 
 .support-icon {
@@ -463,4 +471,153 @@ footer p {
     transform:
         translateX(-50%)
         translateY(0);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .header {
+        width: calc(100% - 16px);
+        padding: 14px 0 12px;
+    }
+
+    .logo-container {
+        width: calc((100% - 8px) / 2);
+        max-width: none;
+        aspect-ratio: 1 / 1;
+        margin: 0 auto 15px;
+    }
+
+    .logo-image {
+        width: 100%;
+        height: 100%;
+    }
+
+    section {
+        width: calc(100% - 16px);
+        margin-bottom: 22px;
+    }
+
+    section h2 {
+        font-size: 18px;
+        margin-bottom: 11px;
+    }
+
+    .links-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .link-card {
+        padding: 11px 7px;
+        border-radius: 12px;
+    }
+
+    .app-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 11px;
+        margin-bottom: 7px;
+    }
+
+    .app-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .image-icon img {
+        border-radius: 11px;
+    }
+
+    .link-card h3 {
+        font-size: 14px;
+    }
+
+    .username {
+        min-height: 28px;
+        font-size: 10px;
+    }
+
+    .open-button,
+    .copy-button {
+        font-size: 10px;
+        padding: 7px 3px;
+        margin-top: 4px;
+        border-radius: 7px;
+    }
+
+    .phone-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .phone-card {
+        padding: 12px 6px;
+        border-radius: 12px;
+    }
+
+    .phone-icon {
+        font-size: 20px;
+    }
+
+    .phone-card a {
+        font-size: 13px;
+    }
+
+    .phone-card button {
+        font-size: 10px;
+        padding: 6px 8px;
+    }
+
+    .address-section {
+        padding: 17px 11px;
+    }
+
+    .address-section p {
+        font-size: 12px;
+    }
+
+    .support-section {
+        padding: 18px 12px;
+    }
+
+    .support-buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 7px;
+    }
+
+    .support-buttons a {
+        font-size: 11px;
+        padding: 8px 4px;
+    }
+}
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+    .logo-container {
+        width: 120px;
+        height: 120px;
+    }
+
+    .logo-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .links-grid,
+    .phone-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .link-card h3 {
+        font-size: 13px;
+    }
 }
